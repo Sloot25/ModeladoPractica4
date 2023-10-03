@@ -6,7 +6,7 @@ public class MisilesPlasma implements ArmasInterface{
 
   @Override 
   public int getAtaque(){
-    return 5; 
+    return 50; 
   }
 
   @Override 
@@ -16,7 +16,7 @@ public class MisilesPlasma implements ArmasInterface{
 
   @Override
   public int getDefensa(){
-    return 2;
+    return 20;
   }
 
   @Override
@@ -30,7 +30,7 @@ public class MisilesPlasma implements ArmasInterface{
   }
 
   @Override 
-  public String getNombre(){
+  public String getName(){
     return "Misiles de Plasma";
   }
 }

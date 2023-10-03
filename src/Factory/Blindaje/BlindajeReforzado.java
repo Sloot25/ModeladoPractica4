@@ -11,12 +11,12 @@ public class BlindajeReforzado implements BlindajeInterface{
 
   @Override 
   public int getDefensa(){
-    return 10;
+    return 30;
   }
 
   @Override 
   public int getVelocidad(){
-    return -5; 
+    return -10; 
   }
 
   @Override 

@@ -11,12 +11,12 @@ public class BlindajeSimple implements BlindajeInterface {
 
   @Override
   public int getDefensa(){
-    return 3; 
+    return 10; 
   }
 
   @Override 
   public int getVelocidad(){
-    return 2;
+    return 10;
   }
 
   @Override 

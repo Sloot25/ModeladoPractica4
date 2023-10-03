@@ -6,17 +6,17 @@ public class LaserSimple implements ArmasInterface{
 
   @Override 
   public int getAtaque(){
-    return 3;
+    return 30;
   }
   
   @Override 
   public int getDefensa(){
-    return 1; 
+    return 10; 
   }
 
   @Override
   public int getVelocidad(){
-    return 1;
+    return 10;
   }
 
   @Override 
@@ -30,7 +30,7 @@ public class LaserSimple implements ArmasInterface{
   }
 
   @Override 
-  public String getNombre(){
+  public String getName(){
     return "Laser Simple";
   }
 } 

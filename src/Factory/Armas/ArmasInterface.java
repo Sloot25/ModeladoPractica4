@@ -5,5 +5,6 @@ public interface ArmasInterface{
   public int getDefensa();
   public int getVelocidad();
   public int getPeso();
-  public String getNombre();
+  public int getPrecio();
+  public String getName();
 }

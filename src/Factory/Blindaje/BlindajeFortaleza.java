@@ -11,11 +11,16 @@ public class BlindajeFortaleza implements BlindajeInterface {
 
   @Override
   public int getDefensa(){
-    return 15;
+    return 100;
+  }
+
+  @Override
+  public int getVelocidad() {
+    return -30;
   }
 
   @Override 
-  public int getName(){
+  public String getName(){
     return "Blindaje Fortaleza";
   }
 
@@ -23,5 +28,11 @@ public class BlindajeFortaleza implements BlindajeInterface {
   public int getPrecio(){
     return 199;
   }
+
+  @Override 
+  public int getPeso(){
+    return 100;
+  }
+
 
 }
