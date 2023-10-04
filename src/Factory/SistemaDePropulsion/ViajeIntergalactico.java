@@ -5,6 +5,16 @@ public class ViajeIntergalactico implements SistemaDePropulsionInterface{
   public ViajeIntergalactico(){}
 
   @Override
+  public int getAtaque() {
+    return 0;
+  }
+
+  @Override
+  public int getDefensa() {
+    return 100;
+  }
+
+  @Override
   public String getName(){
     return "Viaje Intergalactico";
   }

@@ -17,6 +17,16 @@ public class ViajeInterplanetario implements SistemaDePropulsionInterface{
   }
 
   @Override
+  public int getAtaque() {
+    return 0;
+  }
+
+  @Override
+  public int getDefensa() {
+    return 10;
+  }
+
+  @Override
   public int getPeso() {
     return 30;
   }

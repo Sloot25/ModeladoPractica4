@@ -9,6 +9,16 @@ public class MisilesPlasma implements ArmasInterface{
     return 50; 
   }
 
+  @Override 
+  public int getVelocidad(){
+    return 0; 
+  }
+
+  @Override
+  public int getDefensa(){
+    return 20;
+  }
+
   @Override
   public int getPrecio(){
     return 199;

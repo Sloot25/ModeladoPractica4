@@ -4,9 +4,19 @@ public class BlindajeFortaleza implements BlindajeInterface {
   
   public BlindajeFortaleza(){}
 
+  @Override 
+  public int getAtaque(){
+    return 0;
+  }
+
   @Override
   public int getDefensa(){
     return 100;
+  }
+
+  @Override
+  public int getVelocidad() {
+    return -30;
   }
 
   @Override 

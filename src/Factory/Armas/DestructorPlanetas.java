@@ -10,6 +10,16 @@ public class DestructorPlanetas implements ArmasInterface{
   }
 
   @Override 
+  public int getDefensa(){
+    return 20; 
+  }
+
+  @Override 
+  public int getVelocidad(){
+    return -30;
+  }
+
+  @Override 
   public int getPrecio(){
     return 299; 
   }

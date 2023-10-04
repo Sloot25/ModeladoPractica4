@@ -19,7 +19,7 @@ public class Nave {
   }
 
   public int getVelocidad(){
-    return sistema.getVelocidad();
+    return cabina.getVelocidad() + blindaje.getVelocidad() + sistema.getVelocidad() + armas.getVelocidad();
   }
   public int getPeso(){
     return cabina.getPeso() + blindaje.getPeso() + sistema.getPeso() + armas.getPeso();
@@ -28,10 +28,10 @@ public class Nave {
     return cabina.getPrecio() + blindaje.getPrecio() + sistema.getPrecio() + armas.getPrecio();
   }
   public int getAtaque(){
-    return armas.getAtaque();
+    return cabina.getAtaque() + blindaje.getAtaque() + sistema.getAtaque() + armas.getAtaque(); 
   }
   public int getDefensa(){
-    return blindaje.getDefensa();
+    return cabina.getDefensa() + blindaje.getDefensa() + sistema.getDefensa() + armas.getDefensa();
   }
   public String toString(){
     return "Nave" + '\n' 
