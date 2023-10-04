@@ -4,7 +4,7 @@ public class BlindajeFactory{
   
   public BlindajeFactory(){}
 
-  public BlindajeInterface contruirBlindaje(String blindaje){
+  public BlindajeInterface construirBlindaje(String blindaje){
     BlindajeInterface blindajeInterface = null; 
     if(blindaje.equals("BlindajeSimple"))
       blindajeInterface = new BlindajeSimple();

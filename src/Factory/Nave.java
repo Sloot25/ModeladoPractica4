@@ -3,12 +3,10 @@ import Blindaje.BlindajeInterface;
 import SistemaDePropulsion.SistemaDePropulsionInterface; 
 import Armas.ArmasInterface;
 
-package Factory;
-
 public class Nave {
   private CabinaInterface cabina; 
   private BlindajeInterface blindaje; 
-  private SistemaDePropulsion sistema; 
+  private SistemaDePropulsionInterface sistema; 
   private ArmasInterface armas; 
   
   public Nave(CabinaInterface cabina, BlindajeInterface blindaje, SistemaDePropulsionInterface sistema, ArmasInterface armas){
@@ -38,6 +36,6 @@ public class Nave {
     + "Blindaje: " + blindaje.getName() + '\n' 
     + "Cabina: " + cabina.getName() + '\n' 
     + "Sistema de propulsion: " + sistema.getName() + '\n' 
-    + "Armas: " + armas.getName() + '\n'
+    + "Armas: " + armas.getName() + '\n';
   }
 }
