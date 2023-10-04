@@ -10,16 +10,6 @@ public class LaserSimple implements ArmasInterface{
   }
   
   @Override 
-  public int getDefensa(){
-    return 10; 
-  }
-
-  @Override
-  public int getVelocidad(){
-    return 10;
-  }
-
-  @Override 
   public int getPrecio(){
     return 99;
   }

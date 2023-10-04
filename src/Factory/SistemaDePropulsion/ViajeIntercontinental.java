@@ -4,17 +4,6 @@ public class ViajeIntercontinental implements SistemaDePropulsionInterface{
   
   public ViajeIntercontinental(){}
 
-  
-  @Override
-  public int getAtaque() {
-    return 0;
-  }
-
-  @Override
-  public int getDefensa() {
-    return 20;
-  }
-
   public int getVelocidad(){
     return 10;
   }
