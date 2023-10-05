@@ -63,7 +63,7 @@ public class Menu {
   }
 
   /*
-   *  Metodo que le pide al usaurio escoger entre las opciones de escoger arma
+   *  Metodo que le pide al usuario escoger entre las opciones de escoger arma
    * sistema de propulsion, cabina y blindaje. Utiliza los metodos getters 
    * de arriba para brindar las opciones.
    * 
@@ -171,20 +171,24 @@ public class Menu {
    * Metodo que sera usado en el main para mostrar el menu
    */
   public void mostrarMenu(){
+    System.out.println("***************************************************");
+		System.out.println("*                                                 *");
+		System.out.println("*    SISTEMA DE DISEÑO DE NAVES DEL IMPERIO       *");
+		System.out.println("*                                                 *");
+		System.out.println("***************************************************\n");
     escogerPresupuesto();
     Nave nave = crearNave();
     revisarPresupuesto(nave);
   }
 
   /*
-   * Metodo que se ejecuta al terminad de crear una nave personalizada. En caso de
-   * que si haya alcanzado el presupuesto, finaliza el programa. En caso de que
+   * Metodo que se ejecuta una vez terminada de escoger las partes de la nave personalizada. 
+   * En caso de que si haya alcanzado el presupuesto, finaliza el programa. En caso de que
    * no, le muestra el catalogo de naves predisenadas al usuario
    * 
    * @param nave:  Nave creada por el usuario
    */
   private void revisarPresupuesto(Nave nave){
-    System.out.println(nave);
     if(nave.getPrecio() > this.presupuesto){
       int opcion = 0; 
       System.out.println("El costo de tu nave sobrepasa tu presupuesto. Escoge una de las siguientes opciones: ");
@@ -214,7 +218,8 @@ public class Menu {
         }
       }
     }else{
-      System.out.println("Tu nave esta lista para recoger. Revisa sus caracteristicas");
+      System.out.println("Tu nave esta lista para recoger. Revisa sus caracteristicas:");
+      System.out.println(nave);
       System.out.println("Paga en la caja: " + nave.getPrecio());
     }   
   }
@@ -227,23 +232,63 @@ public class Menu {
   private Nave mostrarDefault(){
     int opcion = 0;
     Nave nave = null;
-    while(opcion != 1 && opcion != 2 && opcion != 3){
-      try{
-        System.out.println("Escoge una opcion de nuestro catalogo: ");
+    System.out.println("Escoge una opcion de nuestro catalogo: ");
         System.out.println("1. Nave individual de combate");
         System.out.println("2. Nave militar de transporte");
         System.out.println("3. Base espacial de guerra");
+        System.out.println("4. Salir del menu");
+    while(opcion != 1 && opcion != 2 && opcion != 3  && opcion != 4){
+      try{
         opcion = in.nextInt();
         switch (opcion) {
           case 1:
             nave = factory.construirNave("UnPiloto","BlindajeReforzado","ViajeInterplanetario","LaserSimple");
-            break;
+            System.out.println("Los detalles de la nave:\n");
+            System.out.println(nave);
+            if(nave.getPrecio() > this.presupuesto){
+              System.out.println("Presupuesto insuficiente. Escoge otra opcion:");
+              System.out.println("1. Nave individual de combate");
+              System.out.println("2. Nave militar de transporte");
+              System.out.println("3. Base espacial de guerra");
+              System.out.println("4. Salir del catalogo");
+              opcion = 0;
+              continue;
+            }else{
+              break;
+            }
           case 2: 
             nave = factory.construirNave("TripulacionPequena", "BlindajeReforzado", "ViajeIntercontinental", "MisilesPlasma");
-            break; 
+            System.out.println("Los detalles de la nave:\n");
+            System.out.println(nave);
+            if(nave.getPrecio() > this.presupuesto){
+              System.out.println("Presupuesto insuficiente. Escoge otra opcion:");
+              System.out.println("1. Nave individual de combate");
+              System.out.println("2. Nave militar de transporte");
+              System.out.println("3. Base espacial de guerra");
+              System.out.println("4. Salir del catalogo");
+              opcion = 0;
+              continue;
+            }else{
+              break;
+            }
           case 3: 
             nave = factory.construirNave("Ejercito", "BlindajeReforzado", "ViajeIntergalactico", "DestructorPlanetas");
-            break;
+            System.out.println("Los detalles de la nave:\n");
+            System.out.println(nave);
+            if(nave.getPrecio() > this.presupuesto){
+              System.out.println("Presupuesto insuficiente. Escoge otra opcion:");
+              System.out.println("1. Nave individual de combate");
+              System.out.println("2. Nave militar de transporte");
+              System.out.println("3. Base espacial de guerra");
+              System.out.println("4. Salir del catalogo");
+              opcion = 0;
+              continue;
+            }else{
+              break;
+            }
+          case 4:
+            System.out.println("Saliendo del menu...");
+            break;  
           default:
             System.out.println("Ingresa alguna de las opciones");
             break;

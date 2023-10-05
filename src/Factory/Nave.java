@@ -14,7 +14,7 @@ public class Nave {
   private BlindajeInterface blindaje; 
   private SistemaDePropulsionInterface sistema; 
   private ArmasInterface armas; 
-  
+
   public Nave(CabinaInterface cabina, BlindajeInterface blindaje, SistemaDePropulsionInterface sistema, ArmasInterface armas){
     this.cabina = cabina; 
     this.blindaje = blindaje;
@@ -46,6 +46,8 @@ public class Nave {
     + "Blindaje: " + blindaje.getName() + '\n' 
     + "Cabina: " + cabina.getName() + '\n' 
     + "Sistema de propulsion: " + sistema.getName() + '\n' 
-    + "Armas: " + armas.getName() + '\n';
+    + "Armas: " + armas.getName() + '\n' 
+    + "Precio: " + getPrecio() + '\n'
+    + "Peso: " + getPeso() + " kg";
   }
 }
