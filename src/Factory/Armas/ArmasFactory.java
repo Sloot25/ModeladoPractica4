@@ -1,4 +1,4 @@
-package Armas; 
+package Factory.Armas; 
 
 public class ArmasFactory {
   public ArmasInterface construirArmas(String arma){

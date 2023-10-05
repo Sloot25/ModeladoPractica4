@@ -18,26 +18,26 @@ public class Menu {
     return "Selecciona un arma: " + '\n' +
     "1. Laser simple" + '\n' +
     "2. Misiles de plasma" + '\n' +
-    "3. Laser destructor de planetas" + '\n';
+    "3. Laser destructor de planetas";
   }
   private String getBlindaje(){
     return "Selecciona un blindaje: " + '\n' +
     "1. Blindaje Simple" + '\n' + 
     "2. Blindaje reforzado" + '\n' + 
-    "3. Blindaje Fortaleza" + '\n';
+    "3. Blindaje Fortaleza";
   }
   private String getCabina(){
     return "Selecciona una cabina: " + '\n' + 
     "1. 1 piloto " + '\n' + 
     "2. Tripulacion Pequena " + '\n' +
-    "3. Ejercito " + '\n';
+    "3. Ejercito ";
   }
 
   private String getSistema(){
     return "Selecciona un sistema de propulsion: " + '\n' + 
     "1. Viaje intercontinental " + '\n' + 
     "2. Viaje interplanetario " + '\n' + 
-    "3. Viaje intergalactico" + '\n';
+    "3. Viaje intergalactico" ;
   }
   private void escogerPresupuesto(){
     System.out.println("Ingresa tu presupuesto: ");
@@ -54,7 +54,7 @@ public class Menu {
     String armas, cabina, blindaje, sistema; 
     armas = sistema = cabina = blindaje = null;
     int opcion= 0;
-    while(opcion != 1 || opcion != 2 || opcion != 3){
+    while(opcion != 1 && opcion != 2 && opcion != 3){
       try{
         System.out.println(getArmas());
         opcion = in.nextInt();
@@ -72,12 +72,12 @@ public class Menu {
             System.out.println("Selecciona alguna de nuestras opciones");
             break;
         }
-      }catch(NumberFormatException e){
+      }catch(Exception e){
         System.err.println("Ese no es un numero");
       }
     }
     opcion = 0;
-    while(opcion != 1 || opcion != 2 ||opcion != 3){
+    while(opcion != 1 && opcion != 2 && opcion != 3){
       try{
         System.out.println(getSistema());
         opcion = in.nextInt(); 
@@ -95,12 +95,12 @@ public class Menu {
             System.out.println("Selecciona alguna de nuestras opciones");
             break;
         }
-      }catch(NumberFormatException e){
+      }catch(Exception e){
         System.err.println("Ese no es un numero");
       }
     }
     opcion = 0; 
-    while (opcion != 1 || opcion != 2 || opcion != 3) {
+    while (opcion != 1 && opcion != 2 && opcion != 3) {
       try{
         System.out.println(getCabina());
         opcion = in.nextInt();
@@ -118,12 +118,12 @@ public class Menu {
             System.out.println("Selecciona alguna de nuestras opciones");
             break;
         }
-      } catch(NumberFormatException ex){
+      } catch(Exception ex){
         System.err.println("Ese no es un numero");
       }
     }
     opcion = 0;
-    while (opcion != 1 || opcion != 2 || opcion != 3) {
+    while (opcion != 1 && opcion != 2 && opcion != 3) {
       try{
       System.out.println(getBlindaje());
       opcion = in.nextInt();
@@ -141,7 +141,7 @@ public class Menu {
           System.out.println("Selecciona alguna de nuestras opciones");
           break;
       }
-      }catch(NumberFormatException ex){
+      }catch(Exception ex){
         System.err.println("Ese no es un numero");
       }
     }
@@ -159,7 +159,7 @@ public class Menu {
     if(nave.getPrecio() > this.presupuesto){
       int opcion = 0; 
       System.out.println("El costo de tu nave sobrepasa tu presupuesto. Escoge una de las siguientes opciones: ");
-      while(opcion != 1 || opcion != 2 ){
+      while(opcion != 1 && opcion != 2 ){
         try{
           System.out.println("1. Diseniar otra nave");
           System.out.println("2. Ver nuestro catalogo");
@@ -193,7 +193,7 @@ public class Menu {
   private Nave mostrarDefault(){
     int opcion = 0;
     Nave nave = null;
-    while(opcion != 1 || opcion != 2 || opcion != 3){
+    while(opcion != 1 && opcion != 2 && opcion != 3){
       try{
         System.out.println("Escoge una opcion de nuestro catalogo: ");
         System.out.println("1. Nave individual de combate");
@@ -214,7 +214,7 @@ public class Menu {
             System.out.println("Ingresa alguna de las opciones");
             break;
         }
-      } catch(NumberFormatException ex){
+      } catch(Exception ex){
         System.err.println("Ingresa un numero");
       }
     }

@@ -1,4 +1,4 @@
-package Armas; 
+package Factory.Armas; 
 
 public class DestructorPlanetas implements ArmasInterface{ 
   

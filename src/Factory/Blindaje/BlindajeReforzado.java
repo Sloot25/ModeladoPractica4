@@ -1,4 +1,4 @@
-package Blindaje; 
+package Factory.Blindaje; 
 
 public class BlindajeReforzado implements BlindajeInterface{
 

@@ -1,4 +1,4 @@
-package Armas; 
+package Factory.Armas; 
 
 public interface ArmasInterface{
   public int getAtaque();

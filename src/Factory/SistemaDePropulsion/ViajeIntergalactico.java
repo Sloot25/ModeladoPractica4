@@ -1,4 +1,4 @@
-package SistemaDePropulsion; 
+package Factory.SistemaDePropulsion; 
 
 public class ViajeIntergalactico implements SistemaDePropulsionInterface{
 

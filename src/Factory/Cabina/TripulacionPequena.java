@@ -1,4 +1,4 @@
-package Cabina; 
+package Factory.Cabina; 
 
 public class TripulacionPequena implements CabinaInterface{
 
