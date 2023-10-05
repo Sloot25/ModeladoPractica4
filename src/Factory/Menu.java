@@ -235,11 +235,11 @@ public class Menu {
     Nave nave = null; 
     while(opcion != 1 && opcion != 2 && opcion != 3){
       try{
-        opcion = Integer.parseInt(in.nextLine());
         System.out.println("Escoge una opcion de nuestro catalogo: ");
         System.out.println("1. Nave individual de combate");
         System.out.println("2. Nave militar de transporte");
         System.out.println("3. Base espacial de guerra");
+        opcion = Integer.parseInt(in.nextLine());
         switch (opcion) {
           case 1:
             nave = factory.construirNave("UnPiloto","BlindajeReforzado","ViajeInterplanetario","LaserSimple");
