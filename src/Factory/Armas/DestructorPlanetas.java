@@ -1,9 +1,14 @@
+/*
+ * Producto concreto de armas, seran instanciados en su respectiva fabrica
+ */
 package Armas; 
 
 public class DestructorPlanetas implements ArmasInterface{ 
   
   public DestructorPlanetas(){}
-
+  /*
+   * Metodos getters
+   */
   @Override 
   public int getAtaque(){
     return 100;

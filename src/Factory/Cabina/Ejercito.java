@@ -1,8 +1,13 @@
+/*
+ * Producto concreto de cabina, seran instanciados en su respectiva fabrica
+ */
 package Cabina;
 
 public class Ejercito implements CabinaInterface{
   public Ejercito(){}
-
+  /*
+   * Metodos getters
+   */
   @Override
   public int getAtaque() {
     return 50;

@@ -1,9 +1,14 @@
+/*
+ * Producto concreto de armas, seran instanciados en su respectiva fabrica
+ */
 package Armas; 
 
 public class LaserSimple implements ArmasInterface{ 
 
   public LaserSimple(){}
-
+  /*
+   * Metodos getters
+   */
   @Override 
   public int getAtaque(){
     return 30;

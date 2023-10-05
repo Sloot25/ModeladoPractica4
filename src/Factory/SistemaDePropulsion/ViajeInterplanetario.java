@@ -1,9 +1,14 @@
+/*
+ * Producto concreto de sistema de propulsion, seran instanciados en su respectiva fabrica
+ */
 package SistemaDePropulsion; 
 
 public class ViajeInterplanetario implements SistemaDePropulsionInterface{
 
   public ViajeInterplanetario(){}
-
+  /*
+   * Metodos getters
+   */
   public String getName(){
     return "Viaje Interplanetario";
   }

@@ -1,9 +1,15 @@
+/*
+ * Producto concreto de cabina, seran instanciados en su respectiva fabrica
+ */
 package Cabina; 
 
 public class UnPiloto implements CabinaInterface{
 
   public UnPiloto(){}
 
+  /*
+   * Metodos getters
+   */
   @Override
   public int getAtaque() {
     return 10;

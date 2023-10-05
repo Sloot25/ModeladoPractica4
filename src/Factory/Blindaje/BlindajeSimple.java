@@ -1,9 +1,14 @@
+/*
+ * Producto concreto de blindaje, seran instanciados en su respectiva fabrica
+ */
 package Blindaje; 
 
 public class BlindajeSimple implements BlindajeInterface {
   
   public BlindajeSimple(){}
-
+  /*
+   * Metodos getters
+   */
   @Override
   public int getAtaque(){
     return 0; 

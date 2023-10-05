@@ -1,9 +1,14 @@
+/*
+ * Producto concreto de armas, seran instanciados en su respectiva fabrica
+ */
 package Armas; 
 
 public class MisilesPlasma implements ArmasInterface{
 
   public MisilesPlasma(){}
-
+  /*
+   * Metodos getters
+   */
   @Override 
   public int getAtaque(){
     return 50; 

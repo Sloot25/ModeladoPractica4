@@ -1,9 +1,15 @@
+/*
+ * Producto concreto de sistema de propulsion, seran instanciados en su respectiva fabrica
+ */
 package SistemaDePropulsion; 
 
 public class ViajeIntergalactico implements SistemaDePropulsionInterface{
 
   public ViajeIntergalactico(){}
 
+  /*
+   * Metodos getters
+   */
   @Override
   public int getAtaque() {
     return 0;

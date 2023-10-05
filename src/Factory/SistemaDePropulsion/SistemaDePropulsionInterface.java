@@ -1,3 +1,6 @@
+/*
+ * Interfaz que corresponde al tipo "Producto" del patron factory
+ */
 package SistemaDePropulsion; 
 
 public interface SistemaDePropulsionInterface{
