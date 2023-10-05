@@ -55,8 +55,8 @@ public class Menu {
     int bandera = this.presupuesto;
     while(this.presupuesto == bandera){
       try{
-        this.presupuesto = in.nextInt();
-      }catch(Exception e){
+        this.presupuesto = Integer.parseInt(in.nextLine());
+      }catch(NumberFormatException e){
         System.err.println("Ingresa un presupuesto");
       }
     }
@@ -76,7 +76,7 @@ public class Menu {
     while(opcion != 1 && opcion != 2 && opcion != 3){
       try{
         System.out.println(getArmas());
-        opcion = in.nextInt();
+        opcion = Integer.parseInt(in.nextLine());
         switch (opcion) {
           case 1:
             armas = "LaserSimple";
@@ -91,7 +91,7 @@ public class Menu {
             System.out.println("Selecciona alguna de nuestras opciones");
             break;
         }
-      }catch(Exception e){
+      }catch(NumberFormatException e){
         System.err.println("Ese no es un numero");
       }
     }
@@ -99,7 +99,7 @@ public class Menu {
     while(opcion != 1 && opcion != 2 && opcion != 3){
       try{
         System.out.println(getSistema());
-        opcion = in.nextInt(); 
+        opcion = Integer.parseInt(in.nextLine());
         switch (opcion) {
           case 1:
             sistema = "ViajeIntercontinental";
@@ -114,7 +114,7 @@ public class Menu {
             System.out.println("Selecciona alguna de nuestras opciones");
             break;
         }
-      }catch(Exception e){
+      }catch(NumberFormatException e){
         System.err.println("Ese no es un numero");
       }
     }
@@ -122,7 +122,7 @@ public class Menu {
     while (opcion != 1 && opcion != 2 && opcion != 3) {
       try{
         System.out.println(getCabina());
-        opcion = in.nextInt();
+        opcion = Integer.parseInt(in.nextLine());
         switch (opcion) {
           case 1:
             cabina = "UnPiloto";
@@ -137,7 +137,7 @@ public class Menu {
             System.out.println("Selecciona alguna de nuestras opciones");
             break;
         }
-      } catch(Exception ex){
+      } catch(NumberFormatException ex){
         System.err.println("Ese no es un numero");
       }
     }
@@ -145,7 +145,7 @@ public class Menu {
     while (opcion != 1 && opcion != 2 && opcion != 3) {
       try{
       System.out.println(getBlindaje());
-      opcion = in.nextInt();
+      opcion = Integer.parseInt(in.nextLine());
       switch (opcion) {
         case 1:
           blindaje = "BlindajeSimple";
@@ -160,7 +160,7 @@ public class Menu {
           System.out.println("Selecciona alguna de nuestras opciones");
           break;
       }
-      }catch(Exception ex){
+      }catch(NumberFormatException ex){
         System.err.println("Ese no es un numero");
       }
     }
@@ -197,7 +197,7 @@ public class Menu {
           System.out.println("1. Diseniar otra nave");
           System.out.println("2. Ver nuestro catalogo");
           System.out.println("3. Salir");
-          opcion = in.nextInt();
+          opcion = Integer.parseInt(in.nextLine());
           System.out.println("Ingresa alguna de las opciones");
           switch (opcion) {
             case 1:
@@ -206,6 +206,7 @@ public class Menu {
               return;
             case 2: 
               nave = mostrarDefault();
+              revisarPresupuesto(nave);
               return;
             case 3:
               return;
@@ -230,74 +231,34 @@ public class Menu {
    * @return: informacion de la nave predisenada
    */
   private Nave mostrarDefault(){
-    int opcion = 0;
-    Nave nave = null;
-    System.out.println("Escoge una opcion de nuestro catalogo: ");
+    int opcion = 0; 
+    Nave nave = null; 
+    while(opcion != 1 && opcion != 2 && opcion != 3){
+      try{
+        opcion = Integer.parseInt(in.nextLine());
+        System.out.println("Escoge una opcion de nuestro catalogo: ");
         System.out.println("1. Nave individual de combate");
         System.out.println("2. Nave militar de transporte");
         System.out.println("3. Base espacial de guerra");
-        System.out.println("4. Salir del menu");
-    while(opcion != 1 && opcion != 2 && opcion != 3  && opcion != 4){
-      try{
-        opcion = in.nextInt();
         switch (opcion) {
           case 1:
             nave = factory.construirNave("UnPiloto","BlindajeReforzado","ViajeInterplanetario","LaserSimple");
-            System.out.println("Los detalles de la nave:\n");
-            System.out.println(nave);
-            if(nave.getPrecio() > this.presupuesto){
-              System.out.println("Presupuesto insuficiente. Escoge otra opcion:");
-              System.out.println("1. Nave individual de combate");
-              System.out.println("2. Nave militar de transporte");
-              System.out.println("3. Base espacial de guerra");
-              System.out.println("4. Salir del catalogo");
-              opcion = 0;
-              continue;
-            }else{
-              break;
-            }
+            break; 
           case 2: 
             nave = factory.construirNave("TripulacionPequena", "BlindajeReforzado", "ViajeIntercontinental", "MisilesPlasma");
-            System.out.println("Los detalles de la nave:\n");
-            System.out.println(nave);
-            if(nave.getPrecio() > this.presupuesto){
-              System.out.println("Presupuesto insuficiente. Escoge otra opcion:");
-              System.out.println("1. Nave individual de combate");
-              System.out.println("2. Nave militar de transporte");
-              System.out.println("3. Base espacial de guerra");
-              System.out.println("4. Salir del catalogo");
-              opcion = 0;
-              continue;
-            }else{
-              break;
-            }
-          case 3: 
+            break;
+          case 3:
             nave = factory.construirNave("Ejercito", "BlindajeReforzado", "ViajeIntergalactico", "DestructorPlanetas");
-            System.out.println("Los detalles de la nave:\n");
-            System.out.println(nave);
-            if(nave.getPrecio() > this.presupuesto){
-              System.out.println("Presupuesto insuficiente. Escoge otra opcion:");
-              System.out.println("1. Nave individual de combate");
-              System.out.println("2. Nave militar de transporte");
-              System.out.println("3. Base espacial de guerra");
-              System.out.println("4. Salir del catalogo");
-              opcion = 0;
-              continue;
-            }else{
-              break;
-            }
-          case 4:
-            System.out.println("Saliendo del menu...");
-            break;  
+            break;
           default:
             System.out.println("Ingresa alguna de las opciones");
             break;
         }
-      } catch(Exception ex){
-        System.err.println("Ingresa un numero");
+      }catch(NumberFormatException ex){
+        System.err.println("Ingrea un numero");
       }
     }
     return nave;
   }
-  
+
 }
