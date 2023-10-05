@@ -189,6 +189,8 @@ public class Menu {
    * @param nave:  Nave creada por el usuario
    */
   private void revisarPresupuesto(Nave nave){
+    System.out.println("Esta es tu nave: ");
+    System.out.println(nave);
     if(nave.getPrecio() > this.presupuesto){
       int opcion = 0; 
       System.out.println("El costo de tu nave sobrepasa tu presupuesto. Escoge una de las siguientes opciones: ");
@@ -197,8 +199,8 @@ public class Menu {
           System.out.println("1. Diseniar otra nave");
           System.out.println("2. Ver nuestro catalogo");
           System.out.println("3. Salir");
-          opcion = Integer.parseInt(in.nextLine());
           System.out.println("Ingresa alguna de las opciones");
+          opcion = Integer.parseInt(in.nextLine());
           switch (opcion) {
             case 1:
               nave = crearNave();

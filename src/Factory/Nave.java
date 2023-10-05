@@ -41,6 +41,7 @@ public class Nave {
   public int getDefensa(){
     return cabina.getDefensa() + blindaje.getDefensa() + sistema.getDefensa() + armas.getDefensa();
   }
+  
   public String toString(){
     return "Nave" + '\n' 
     + "Blindaje: " + blindaje.getName() + '\n' 
@@ -48,6 +49,9 @@ public class Nave {
     + "Sistema de propulsion: " + sistema.getName() + '\n' 
     + "Armas: " + armas.getName() + '\n' 
     + "Precio: " + getPrecio() + '\n'
-    + "Peso: " + getPeso() + " kg";
+    + "Peso: " + getPeso() + " kg" + '\n'
+    + "Ataque: " + getAtaque() + '\n'
+    + "Defensa: " + getDefensa() + '\n'
+    + "Velocidad: " + getVelocidad();
   }
 }
