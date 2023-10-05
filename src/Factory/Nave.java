@@ -1,4 +1,7 @@
-
+/*
+ * Clase que recibirá las clases de Cabina, Blindaje, Sistema y Armas
+ * para almacenar la informacion de la nave que escoja el cliente
+ */
 package Factory;
 
 import Cabina.CabinaInterface;
@@ -19,6 +22,10 @@ public class Nave {
     this.armas = armas;
   }
 
+  /*
+   * Metodos getters, se suman los valores de los atributos provenientes de las clases
+   * cabina, blindaje, sistema y armas
+   */
   public int getVelocidad(){
     return cabina.getVelocidad() + blindaje.getVelocidad() + sistema.getVelocidad() + armas.getVelocidad();
   }
