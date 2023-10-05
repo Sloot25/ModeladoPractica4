@@ -1,3 +1,6 @@
+
+package Factory;
+
 import Armas.ArmasFactory; 
 import Armas.ArmasInterface; 
 import Blindaje.BlindajeFactory; 

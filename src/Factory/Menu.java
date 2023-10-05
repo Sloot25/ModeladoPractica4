@@ -1,13 +1,17 @@
-import java.util.Scanner;
 
 package Factory;
+
+import java.util.Scanner;
+
 
 public class Menu {
   NaveFactory factory;
   int presupuesto;
+  Scanner in;
   public Menu(NaveFactory factory){
     this.factory = factory;
     this.presupuesto = 0;
+    in = new Scanner(System.in);
   } 
 
   private String getArmas(){
@@ -35,17 +39,18 @@ public class Menu {
     "2. Viaje interplanetario " + '\n' + 
     "3. Viaje intergalactico" + '\n';
   }
-
-  private Nave crearNave(){
-    Scanner in = new Scanner(System.in);
+  private void escogerPresupuesto(){
     System.out.println("Ingresa tu presupuesto: ");
-    while(this.presupuesto == 0){
-      try {
+    int bandera = this.presupuesto;
+    while(this.presupuesto == bandera){
+      try{
         this.presupuesto = in.nextInt();
-      } catch (Exception e) {
+      }catch(Exception e){
         System.err.println("Ingresa un presupuesto");
       }
     }
+  }
+  private Nave crearNave(){
     String armas, cabina, blindaje, sistema; 
     armas = sistema = cabina = blindaje = null;
     int opcion= 0;
@@ -144,7 +149,76 @@ public class Menu {
   }
 
   public void mostrarMenu(){
-    Nave nave = construirNave();
+    escogerPresupuesto();
+    Nave nave = crearNave();
+    revisarPresupuesto(nave);
   }
 
+  private void revisarPresupuesto(Nave nave){
+    System.out.println(nave);
+    if(nave.getPrecio() > this.presupuesto){
+      int opcion = 0; 
+      System.out.println("El costo de tu nave sobrepasa tu presupuesto. Escoge una de las siguientes opciones: ");
+      while(opcion != 1 || opcion != 2 ){
+        try{
+          System.out.println("1. Diseniar otra nave");
+          System.out.println("2. Ver nuestro catalogo");
+          System.out.println("3. Salir");
+          opcion = in.nextInt();
+          System.out.println("Ingresa alguna de las opciones");
+          switch (opcion) {
+            case 1:
+              nave = crearNave();
+              revisarPresupuesto(nave);
+              return;
+            case 2: 
+              nave = mostrarDefault();
+              return;
+            case 3:
+              return;
+            default:
+              System.out.println("ELige algunas de las opciones");
+              break;
+          }
+        } catch(NumberFormatException ex){
+          System.err.println("Ingresa un numero");
+        }
+      }
+    }else{
+      System.out.println("Tu nave esta lista para recoger. Revisa sus caracteristicas");
+      System.out.println("Paga en la caja: " + nave.getPrecio());
+    }   
+  }
+
+  private Nave mostrarDefault(){
+    int opcion = 0;
+    Nave nave = null;
+    while(opcion != 1 || opcion != 2 || opcion != 3){
+      try{
+        System.out.println("Escoge una opcion de nuestro catalogo: ");
+        System.out.println("1. Nave individual de combate");
+        System.out.println("2. Nave militar de transporte");
+        System.out.println("3. Base espacial de guerra");
+        opcion = in.nextInt();
+        switch (opcion) {
+          case 1:
+            nave = factory.construirNave("UnPiloto","BlindajeReforzado","ViajeInterplanetario","LaserSimple");
+            break;
+          case 2: 
+            nave = factory.construirNave("TripulacionPequena", "BlindajeReforzado", "ViajeIntercontinental", "MisilesPlasma");
+            break; 
+          case 3: 
+            nave = factory.construirNave("Ejercito", "BlindajeReforzado", "ViajeIntergalactico", "DestructorPlanetas");
+            break;
+          default:
+            System.out.println("Ingresa alguna de las opciones");
+            break;
+        }
+      } catch(NumberFormatException ex){
+        System.err.println("Ingresa un numero");
+      }
+    }
+    return nave;
+  }
+  
 }
