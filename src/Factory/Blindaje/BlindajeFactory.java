@@ -1,7 +1,7 @@
 /*
  * Clase fabrica del tipo Blindaje 
  */
-package Blindaje; 
+package Factory.Blindaje; 
 
 public class BlindajeFactory{
   

@@ -3,14 +3,14 @@
  */
 package Factory;
 
-import Armas.ArmasFactory; 
-import Armas.ArmasInterface; 
-import Blindaje.BlindajeFactory; 
-import Blindaje.BlindajeInterface; 
-import Cabina.CabinaFactory;
-import Cabina.CabinaInterface;
-import SistemaDePropulsion.SistemaDePropulsionInterface; 
-import SistemaDePropulsion.SistemaDePropulsionFactory;
+import Factory.Armas.ArmasFactory; 
+import Factory.Armas.ArmasInterface; 
+import Factory.Blindaje.BlindajeFactory; 
+import Factory.Blindaje.BlindajeInterface; 
+import Factory.Cabina.CabinaFactory;
+import Factory.Cabina.CabinaInterface;
+import Factory.SistemaDePropulsion.SistemaDePropulsionInterface; 
+import Factory.SistemaDePropulsion.SistemaDePropulsionFactory;
 
 public class NaveFactory {
   public NaveFactory(){}

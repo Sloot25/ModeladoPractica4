@@ -1,7 +1,8 @@
 /*
  * Interfaz que corresponde al tipo "Producto" del patron factory
  */
-package Armas; 
+
+package Factory.Armas; 
 
 public interface ArmasInterface{
   public int getAtaque();

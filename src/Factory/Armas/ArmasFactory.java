@@ -1,7 +1,8 @@
 /*
  * Clase fabrica del tipo Armas 
  */
-package Armas; 
+
+package Factory.Armas; 
 
 public class ArmasFactory {
 

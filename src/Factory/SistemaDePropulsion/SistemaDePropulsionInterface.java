@@ -1,7 +1,7 @@
 /*
  * Interfaz que corresponde al tipo "Producto" del patron factory
  */
-package SistemaDePropulsion; 
+package Factory.SistemaDePropulsion; 
 
 public interface SistemaDePropulsionInterface{
   public int getAtaque();

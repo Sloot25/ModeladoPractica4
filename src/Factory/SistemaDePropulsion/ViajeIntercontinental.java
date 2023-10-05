@@ -1,7 +1,7 @@
 /*
  * Producto concreto de sistema de propulsion, seran instanciados en su respectiva fabrica
  */
-package SistemaDePropulsion; 
+package Factory.SistemaDePropulsion; 
 
 public class ViajeIntercontinental implements SistemaDePropulsionInterface{
   

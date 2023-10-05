@@ -1,7 +1,7 @@
 /*
  * Producto concreto de blindaje, seran instanciados en su respectiva fabrica
  */
-package Blindaje; 
+package Factory.Blindaje; 
 
 public class BlindajeReforzado implements BlindajeInterface{
 

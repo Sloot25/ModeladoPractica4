@@ -1,4 +1,7 @@
-
+/*
+ * En esta clase se crea el menu de usuario que será mandando a llamar
+ * en el Main
+ */
 package Factory;
 
 import java.util.Scanner;
@@ -13,32 +16,40 @@ public class Menu {
     this.presupuesto = 0;
     in = new Scanner(System.in);
   } 
-
+  /*
+   * Metodos para mostrar las opciones de usuarios
+   * 
+   * @return String con las opciones que tiene el usuario para escoger
+   */
   private String getArmas(){
     return "Selecciona un arma: " + '\n' +
     "1. Laser simple" + '\n' +
     "2. Misiles de plasma" + '\n' +
-    "3. Laser destructor de planetas" + '\n';
+    "3. Laser destructor de planetas";
   }
   private String getBlindaje(){
     return "Selecciona un blindaje: " + '\n' +
     "1. Blindaje Simple" + '\n' + 
     "2. Blindaje reforzado" + '\n' + 
-    "3. Blindaje Fortaleza" + '\n';
+    "3. Blindaje Fortaleza";
   }
   private String getCabina(){
     return "Selecciona una cabina: " + '\n' + 
     "1. 1 piloto " + '\n' + 
     "2. Tripulacion Pequena " + '\n' +
-    "3. Ejercito " + '\n';
+    "3. Ejercito ";
   }
 
   private String getSistema(){
     return "Selecciona un sistema de propulsion: " + '\n' + 
     "1. Viaje intercontinental " + '\n' + 
     "2. Viaje interplanetario " + '\n' + 
-    "3. Viaje intergalactico" + '\n';
+    "3. Viaje intergalactico" ;
   }
+
+  /*
+   *  Metodo que le pide al usuario un presupuesto
+   */
   private void escogerPresupuesto(){
     System.out.println("Ingresa tu presupuesto: ");
     int bandera = this.presupuesto;
@@ -50,11 +61,19 @@ public class Menu {
       }
     }
   }
+
+  /*
+   *  Metodo que le pide al usaurio escoger entre las opciones de escoger arma
+   * sistema de propulsion, cabina y blindaje. Utiliza los metodos getters 
+   * de arriba para brindar las opciones.
+   * 
+   * @return nave: objeto de tipo Nave con los atributos seleccionados
+   */
   private Nave crearNave(){
     String armas, cabina, blindaje, sistema; 
     armas = sistema = cabina = blindaje = null;
     int opcion= 0;
-    while(opcion != 1 || opcion != 2 || opcion != 3){
+    while(opcion != 1 && opcion != 2 && opcion != 3){
       try{
         System.out.println(getArmas());
         opcion = in.nextInt();
@@ -72,12 +91,12 @@ public class Menu {
             System.out.println("Selecciona alguna de nuestras opciones");
             break;
         }
-      }catch(NumberFormatException e){
+      }catch(Exception e){
         System.err.println("Ese no es un numero");
       }
     }
     opcion = 0;
-    while(opcion != 1 || opcion != 2 ||opcion != 3){
+    while(opcion != 1 && opcion != 2 && opcion != 3){
       try{
         System.out.println(getSistema());
         opcion = in.nextInt(); 
@@ -95,12 +114,12 @@ public class Menu {
             System.out.println("Selecciona alguna de nuestras opciones");
             break;
         }
-      }catch(NumberFormatException e){
+      }catch(Exception e){
         System.err.println("Ese no es un numero");
       }
     }
     opcion = 0; 
-    while (opcion != 1 || opcion != 2 || opcion != 3) {
+    while (opcion != 1 && opcion != 2 && opcion != 3) {
       try{
         System.out.println(getCabina());
         opcion = in.nextInt();
@@ -118,12 +137,12 @@ public class Menu {
             System.out.println("Selecciona alguna de nuestras opciones");
             break;
         }
-      } catch(NumberFormatException ex){
+      } catch(Exception ex){
         System.err.println("Ese no es un numero");
       }
     }
     opcion = 0;
-    while (opcion != 1 || opcion != 2 || opcion != 3) {
+    while (opcion != 1 && opcion != 2 && opcion != 3) {
       try{
       System.out.println(getBlindaje());
       opcion = in.nextInt();
@@ -141,25 +160,35 @@ public class Menu {
           System.out.println("Selecciona alguna de nuestras opciones");
           break;
       }
-      }catch(NumberFormatException ex){
+      }catch(Exception ex){
         System.err.println("Ese no es un numero");
       }
     }
     return factory.construirNave(cabina, blindaje, sistema, armas);
   }
 
+  /*
+   * Metodo que sera usado en el main para mostrar el menu
+   */
   public void mostrarMenu(){
     escogerPresupuesto();
     Nave nave = crearNave();
     revisarPresupuesto(nave);
   }
 
+  /*
+   * Metodo que se ejecuta al terminad de crear una nave personalizada. En caso de
+   * que si haya alcanzado el presupuesto, finaliza el programa. En caso de que
+   * no, le muestra el catalogo de naves predisenadas al usuario
+   * 
+   * @param nave:  Nave creada por el usuario
+   */
   private void revisarPresupuesto(Nave nave){
     System.out.println(nave);
     if(nave.getPrecio() > this.presupuesto){
       int opcion = 0; 
       System.out.println("El costo de tu nave sobrepasa tu presupuesto. Escoge una de las siguientes opciones: ");
-      while(opcion != 1 || opcion != 2 ){
+      while(opcion != 1 && opcion != 2 ){
         try{
           System.out.println("1. Diseniar otra nave");
           System.out.println("2. Ver nuestro catalogo");
@@ -190,10 +219,15 @@ public class Menu {
     }   
   }
 
+  /*
+   *  Metodo para mostrar las naves predisenadas
+   * 
+   * @return: informacion de la nave predisenada
+   */
   private Nave mostrarDefault(){
     int opcion = 0;
     Nave nave = null;
-    while(opcion != 1 || opcion != 2 || opcion != 3){
+    while(opcion != 1 && opcion != 2 && opcion != 3){
       try{
         System.out.println("Escoge una opcion de nuestro catalogo: ");
         System.out.println("1. Nave individual de combate");
@@ -214,7 +248,7 @@ public class Menu {
             System.out.println("Ingresa alguna de las opciones");
             break;
         }
-      } catch(NumberFormatException ex){
+      } catch(Exception ex){
         System.err.println("Ingresa un numero");
       }
     }

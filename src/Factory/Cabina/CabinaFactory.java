@@ -1,7 +1,7 @@
 /*
  * Clase fabrica del tipo Cabina 
  */
-package Cabina; 
+package Factory.Cabina; 
 
 public class CabinaFactory {
   

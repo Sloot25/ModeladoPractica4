@@ -1,7 +1,8 @@
 /*
  * Clase fabrica del tipo Sistema de propulsion 
  */
-package SistemaDePropulsion; 
+ 
+package Factory.SistemaDePropulsion; 
 
 public class SistemaDePropulsionFactory {
   public SistemaDePropulsionFactory(){}

@@ -1,7 +1,7 @@
 /*
  * Producto concreto de cabina, seran instanciados en su respectiva fabrica
  */
-package Cabina; 
+package Factory.Cabina; 
 
 public class UnPiloto implements CabinaInterface{
 

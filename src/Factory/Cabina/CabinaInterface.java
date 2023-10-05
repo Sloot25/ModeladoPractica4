@@ -1,7 +1,7 @@
 /*
  * Interfaz que corresponde al tipo "Producto" del patron factory
  */
-package Cabina; 
+package Factory.Cabina; 
 
 public interface CabinaInterface{
   public int getAtaque(); 

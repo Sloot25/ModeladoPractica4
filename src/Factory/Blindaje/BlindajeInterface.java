@@ -1,7 +1,7 @@
 /*
  * Interfaz que corresponde al tipo "Producto" del patron factory
  */
-package Blindaje; 
+package Factory.Blindaje; 
 
 public interface BlindajeInterface{
 

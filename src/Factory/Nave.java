@@ -4,10 +4,10 @@
  */
 package Factory;
 
-import Cabina.CabinaInterface;
-import Blindaje.BlindajeInterface;
-import SistemaDePropulsion.SistemaDePropulsionInterface; 
-import Armas.ArmasInterface;
+import Factory.Cabina.CabinaInterface;
+import Factory.Blindaje.BlindajeInterface;
+import Factory.SistemaDePropulsion.SistemaDePropulsionInterface; 
+import Factory.Armas.ArmasInterface;
 
 public class Nave {
   private CabinaInterface cabina; 

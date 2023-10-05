@@ -1,7 +1,8 @@
 /*
  * Producto concreto de armas, seran instanciados en su respectiva fabrica
  */
-package Armas; 
+
+package Factory.Armas; 
 
 public class LaserSimple implements ArmasInterface{ 
 
